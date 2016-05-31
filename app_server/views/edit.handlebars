@@ -1,0 +1,10 @@
+<h1>Edit Chores</h1> {{#each chores}}
+
+<h3>Task: {{task}}</h3>
+
+<form method="POST" action="/update">
+    <input type="hidden" value="{{this.id}}" name="upid">
+    <input type="text" name="task" placeholder="Enter Task Name" value="{{this.task}}" required="">
+    <input type="submit" name="submit" value="Submit">
+</form>{{/each}}
+<a href="/">Home</a>
