@@ -1,21 +1,29 @@
-<h3>Task List</h3>
-<form method="POST" action="/create" id="input">
-    <input type="text" name="task" value="" placeholder="Enter Task" size="60" required="">
-    <input type="submit" name="submit" value="Submit">
-</form>
-<br>
-
+<div class="w3-red">
+    <h3>Task List</h3>
+    <form method="POST" action="/create" id="input">
+        <input type="text" name="task" value="" placeholder="Enter Task" size="60" required="">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <br>
+</div>
 <h1>Current Tasks </h1> {{#each chores}}
 
+<div class="w3-card-4">
 
-<h3>Task: {{task}}</h3>
-<p>ID: {{id}}</p>
-<form method="POST" action="/delete">
-    <input type="hidden" name="exid" value="{{this.id}}">
-    <input type="submit" value="Delete"> </form>
-<form method="POST" action="/edit">
-    <input type="hidden" name="editid" value="{{this.id}}">
-    <input type="submit" value="Edit">
-</form>
+    <header class="w3-container w3-blue">
+        <h3>Task: {{task}}</h3>
+    </header>
+</div>
+<div class="w3-container">
+    <p>ID: {{id}}</p>
+    <form method="POST" action="/edit">
+        <input type="hidden" name="editid" value="{{this.id}}">
+        <input type="submit" value="Edit">
+    </form>
+    <form method="POST" action="/delete">
+        <input type="hidden" name="exid" value="{{this.id}}">
+        <input type="submit" value="Delete"> </form>
+
+</div>
 
 {{/each}}
